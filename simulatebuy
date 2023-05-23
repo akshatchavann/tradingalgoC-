@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+
+// Function to calculate the average price
+double calculateAveragePrice(const std::vector<double>& prices) {
+    double sum = 0;
+    for (double price : prices) {
+        sum += price;
+    }
+    return sum / prices.size();
+}
+
+// Function to simulate a buy order
+void buyStock() {
+    std::cout << "Executing buy order..." << std::endl;
+    // Add your buy order logic here
+}
+
+// Function to simulate a sell order
+void sellStock() {
+    std::cout << "Executing sell order..." << std::endl;
+    // Add your sell order logic here
+}
+
+int main() {
+    std::vector<double> priceHistory;  // Stores the historical prices
+
+    // Simulating price data
+    priceHistory.push_back(10.2);
+    priceHistory.push_back(9.8);
+    priceHistory.push_back(11.0);
+    priceHistory.push_back(10.5);
+    priceHistory.push_back(12.2);
+
+    // Calculate the average price
+    double averagePrice = calculateAveragePrice(priceHistory);
+
+    // Print the average price
+    std::cout << "Average Price: " << averagePrice << std::endl;
+
+    // Perform trading logic based on the average price
+    double currentPrice = priceHistory.back();  // Get the latest price
+
+    if (currentPrice > averagePrice) {
+        buyStock();
+    } else {
+        sellStock();
+    }
+
+    return 0;
+}
+
